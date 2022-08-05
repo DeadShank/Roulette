@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		5090EFDF289BCAB10022E5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFDE289BCAB10022E5DE /* AppDelegate.swift */; };
 		5090EFE1289BCAB10022E5DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */; };
-		5090EFE3289BCAB10022E5DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE2289BCAB10022E5DE /* ViewController.swift */; };
+		5090EFE3289BCAB10022E5DE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE2289BCAB10022E5DE /* LoginVC.swift */; };
 		5090EFE6289BCAB10022E5DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090EFE4289BCAB10022E5DE /* Main.storyboard */; };
 		5090EFE8289BCAB40022E5DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5090EFE7289BCAB40022E5DE /* Assets.xcassets */; };
 		5090EFEB289BCAB40022E5DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090EFE9289BCAB40022E5DE /* LaunchScreen.storyboard */; };
+		5090EFF3289BCBF90022E5DE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFF2289BCBF90022E5DE /* UserModel.swift */; };
+		5090EFF5289BCF920022E5DE /* GameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090EFF4289BCF920022E5DE /* GameStoryboard.storyboard */; };
+		5090EFF7289BCFDC0022E5DE /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFF6289BCFDC0022E5DE /* GameVC.swift */; };
+		5090EFF9289BE5DF0022E5DE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFF8289BE5DF0022E5DE /* CollectionViewCell.swift */; };
+		5090EFFB289C3E150022E5DE /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFFA289C3E150022E5DE /* Logic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5090EFDB289BCAB10022E5DE /* Roulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5090EFDE289BCAB10022E5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5090EFE2289BCAB10022E5DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5090EFE2289BCAB10022E5DE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5090EFE5289BCAB10022E5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5090EFE7289BCAB40022E5DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5090EFEA289BCAB40022E5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5090EFEC289BCAB40022E5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5090EFF2289BCBF90022E5DE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5090EFF4289BCF920022E5DE /* GameStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameStoryboard.storyboard; sourceTree = "<group>"; };
+		5090EFF6289BCFDC0022E5DE /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		5090EFF8289BE5DF0022E5DE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5090EFFA289C3E150022E5DE /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +68,13 @@
 			children = (
 				5090EFDE289BCAB10022E5DE /* AppDelegate.swift */,
 				5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */,
-				5090EFE2289BCAB10022E5DE /* ViewController.swift */,
+				5090EFE2289BCAB10022E5DE /* LoginVC.swift */,
+				5090EFF4289BCF920022E5DE /* GameStoryboard.storyboard */,
+				5090EFF8289BE5DF0022E5DE /* CollectionViewCell.swift */,
+				5090EFF6289BCFDC0022E5DE /* GameVC.swift */,
+				5090EFFA289C3E150022E5DE /* Logic.swift */,
 				5090EFE4289BCAB10022E5DE /* Main.storyboard */,
+				5090EFF2289BCBF90022E5DE /* UserModel.swift */,
 				5090EFE7289BCAB40022E5DE /* Assets.xcassets */,
 				5090EFE9289BCAB40022E5DE /* LaunchScreen.storyboard */,
 				5090EFEC289BCAB40022E5DE /* Info.plist */,
@@ -128,6 +143,7 @@
 				5090EFEB289BCAB40022E5DE /* LaunchScreen.storyboard in Resources */,
 				5090EFE8289BCAB40022E5DE /* Assets.xcassets in Resources */,
 				5090EFE6289BCAB10022E5DE /* Main.storyboard in Resources */,
+				5090EFF5289BCF920022E5DE /* GameStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5090EFE3289BCAB10022E5DE /* ViewController.swift in Sources */,
+				5090EFE3289BCAB10022E5DE /* LoginVC.swift in Sources */,
 				5090EFDF289BCAB10022E5DE /* AppDelegate.swift in Sources */,
+				5090EFF9289BE5DF0022E5DE /* CollectionViewCell.swift in Sources */,
+				5090EFFB289C3E150022E5DE /* Logic.swift in Sources */,
+				5090EFF3289BCBF90022E5DE /* UserModel.swift in Sources */,
+				5090EFF7289BCFDC0022E5DE /* GameVC.swift in Sources */,
 				5090EFE1289BCAB10022E5DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
