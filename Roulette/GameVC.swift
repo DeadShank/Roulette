@@ -37,11 +37,11 @@ class GameVC: UIViewController {
     var selectedNumbers = [Int]()
     var userData = UserModel()
     var number = ["3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36", "2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35", "1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34"]
-    let allNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+    let allNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     var randomNumber = Int()
     var gameLogic = Logic()
     var score = Int()
-    var rate = 100
+    var rate = Int()
     var coin = Int()
     
     override func viewDidLoad() {
@@ -115,6 +115,7 @@ class GameVC: UIViewController {
         
         score = userData.score
         coin = userData.coin
+        rate = coin / 10
         
         scoreLabel.text = "Score: \(score)"
         rateLabel.text = "\(rate)"
@@ -127,6 +128,7 @@ class GameVC: UIViewController {
         imageRoulette.clipsToBounds = true
         
         coinLabel.text = "Coins: \(coin)"
+        
         
     }
     
@@ -158,8 +160,10 @@ class GameVC: UIViewController {
             rateLabel.layer.borderColor = UIColor.white.cgColor
             coin -= rate
             coinLabel.text = "Coins: \(coin)"
+            rate = coin / 10
+            rateLabel.text = "\(rate)"
             spinRandomNumber()
-            if coin == 0 {
+            if coin < 100 {
                 coin += 100
                 coinLabel.text = "Coins: \(coin)"
             }
@@ -181,7 +185,7 @@ class GameVC: UIViewController {
         
     }
     @IBAction func zeroButton(_ sender: UIButton) {
-        selectedNumbers.append(0)
+        selectedNumbers.append(36)
         print("selectedNumbers \(selectedNumbers)")
     }
     
@@ -213,7 +217,7 @@ class GameVC: UIViewController {
     }
     
     @IBAction func threeTwelveButton(_ sender: UIButton) {
-        selectedNumbers += [8, 9, 10, 11, 20, 21, 22, 23, 33, 34, 35, 36]
+        selectedNumbers += [8, 9, 10, 11, 20, 21, 22, 23, 32, 33, 34, 35]
         print("selectedNumbers \(selectedNumbers)")
     }
     
@@ -243,10 +247,10 @@ class GameVC: UIViewController {
         print("selectedNumbers \(selectedNumbers)")
     }
     @IBAction func plusRateButton(_ sender: UIButton) {
-        if rate >= coin {
+        if (rate + (coin / 10)) >= coin {
             plusRateButton.layer.borderColor = UIColor.red.cgColor
         } else {
-            rate += 100
+            rate += coin / 10
             print("rate \(rate)")
             rateLabel.text = "\(rate)"
             plusRateButton.layer.borderColor = UIColor.white.cgColor
@@ -255,10 +259,10 @@ class GameVC: UIViewController {
     }
     
     @IBAction func minusRateButton(_ sender: UIButton) {
-        if rate == 0 {
+        if rate < (coin / 10) {
             minusRateButton.layer.borderColor = UIColor.red.cgColor
         } else {
-            rate -= 100
+            rate -= coin / 10
             print("rate \(rate)")
             rateLabel.text = "\(rate)"
             minusRateButton.layer.borderColor = UIColor.white.cgColor

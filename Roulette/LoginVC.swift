@@ -14,7 +14,9 @@ class LoginVC: UIViewController {
     var userData = UserModel()
 
     
-    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
