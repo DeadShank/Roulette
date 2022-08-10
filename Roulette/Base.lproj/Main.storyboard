@@ -53,20 +53,32 @@
                                     <action selector="enterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8r-U2-gaO"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kua-Bd-EZ1">
+                                <rect key="frame" x="127" y="433" width="160" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="E5S-FK-ecY"/>
+                                    <constraint firstAttribute="width" constant="160" id="Ne6-VO-YfC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="dEM-fm-LTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="3w3-md-cRi"/>
+                            <constraint firstItem="kua-Bd-EZ1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5gq-SX-PHp"/>
                             <constraint firstItem="hkQ-Kc-caS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="350" id="6mY-q2-twG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="imt-Aa-JyL" secondAttribute="bottom" constant="40" id="E14-Rt-gVN"/>
                             <constraint firstItem="hkQ-Kc-caS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JF5-dm-dn9"/>
+                            <constraint firstItem="kua-Bd-EZ1" firstAttribute="top" secondItem="hkQ-Kc-caS" secondAttribute="bottom" constant="5" id="KqV-YK-6pg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="imt-Aa-JyL" secondAttribute="trailing" constant="50" id="eCO-mF-qA9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dEM-fm-LTb" secondAttribute="bottom" constant="40" id="xbZ-ru-4Cv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="nameTF" destination="hkQ-Kc-caS" id="nbb-Tf-fu2"/>
+                        <outlet property="passTF" destination="kua-Bd-EZ1" id="f4V-Dh-A9R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

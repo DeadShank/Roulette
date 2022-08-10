@@ -8,6 +8,7 @@
 import UIKit
 
 class GameVC: UIViewController {
+    
     @IBOutlet weak var gameCollection: UICollectionView!
     @IBOutlet weak var one2k1Button: UIButton!
     @IBOutlet weak var two2k1Button: UIButton!
@@ -30,25 +31,25 @@ class GameVC: UIViewController {
     @IBOutlet weak var minusRateButton: UIButton!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var plusRateButton: UIButton!
+    @IBOutlet weak var seetingsButton: UIButton!
     
+    var userData = UserModel()
+    var gameLogic = Logic()
     
     let redNumbers = [0, 2, 3, 5, 6, 8, 9, 11, 13, 16, 19, 22, 24, 26, 29, 32, 33, 35]
     var selectedIndex = IndexPath(row: -1, section: 0)
-    var selectedNumbers = [Int]()
-    var userData = UserModel()
+    var selectedNumbers: [Int] = []
     var number = ["3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36", "2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35", "1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34"]
     let allNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
-    var randomNumber = Int()
-    var gameLogic = Logic()
-    var score = Int()
-    var rate = Int()
-    var coin = Int()
+    var randomNumber: Int = 0
+    var score: Int = 0
+    var rate: Int = 0
+    var coin: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createGameCollection()
         propElems()
-        // Do any additional setup after loading the view.
     }
     
     func propElems() {
@@ -121,15 +122,12 @@ class GameVC: UIViewController {
         rateLabel.text = "\(rate)"
         nameUserLabel.text = "Name: \(userData.user)"
         
-        
         imageRoulette.layer.borderColor = UIColor.black.cgColor
         imageRoulette.layer.borderWidth = 1
         imageRoulette.layer.cornerRadius = imageRoulette.frame.width / 2
         imageRoulette.clipsToBounds = true
         
         coinLabel.text = "Coins: \(coin)"
-        
-        
     }
     
     func spinRandomNumber() {
@@ -174,16 +172,15 @@ class GameVC: UIViewController {
         return .landscape
     }
     
-    
     func createGameCollection() {
         gameCollection.delegate = self
         gameCollection.dataSource = self
     }
+    
     @IBAction func spinButton(_ sender: UIButton) {
-        
         logicData()
-        
     }
+    
     @IBAction func zeroButton(_ sender: UIButton) {
         selectedNumbers.append(36)
         print("selectedNumbers \(selectedNumbers)")
@@ -197,13 +194,11 @@ class GameVC: UIViewController {
     @IBAction func two2k1Button(_ sender: UIButton) {
         selectedNumbers += [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
         print("selectedNumbers \(selectedNumbers)")
-
     }
     
     @IBAction func three2k1Button(_ sender: UIButton) {
         selectedNumbers += [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
         print("selectedNumbers \(selectedNumbers)")
-
     }
     
     @IBAction func oneTwelveButton(_ sender: UIButton) {
@@ -230,28 +225,32 @@ class GameVC: UIViewController {
         selectedNumbers += [1, 3, 5, 7, 9, 11, 12, 14, 16, 18, 20, 22, 25, 27, 29, 31, 33, 35]
         print("selectedNumbers \(selectedNumbers)")
     }
+    
     @IBAction func redButton(_ sender: UIButton) {
         selectedNumbers += [0, 2, 3, 5, 6, 8, 9, 11, 13, 16, 19, 22, 24, 26, 29, 32, 33, 35]
         print("selectedNumbers \(selectedNumbers)")
     }
+    
     @IBAction func blackButton(_ sender: UIButton) {
         selectedNumbers += [1, 4, 7, 10, 12, 14, 15, 17, 18, 20, 21, 23, 25, 27, 28, 30, 31, 34]
         print("selectedNumbers \(selectedNumbers)")
     }
+    
     @IBAction func oddButton(_ sender: UIButton) {
         selectedNumbers += [0, 2, 4, 6, 8, 10, 13, 15, 17, 19, 21, 23, 24, 26, 28, 30, 32, 34]
         print("selectedNumbers \(selectedNumbers)")
     }
+    
     @IBAction func ninteteenThirtySixButton(_ sender: UIButton) {
         selectedNumbers += [6, 7, 8, 9, 10, 11, 18, 19, 20, 21, 22, 23, 30, 31, 32, 33, 34, 35]
         print("selectedNumbers \(selectedNumbers)")
     }
+    
     @IBAction func plusRateButton(_ sender: UIButton) {
         if (rate + (coin / 10)) >= coin {
             plusRateButton.layer.borderColor = UIColor.red.cgColor
         } else {
             rate += coin / 10
-            print("rate \(rate)")
             rateLabel.text = "\(rate)"
             plusRateButton.layer.borderColor = UIColor.white.cgColor
             minusRateButton.layer.borderColor = UIColor.white.cgColor
@@ -263,24 +262,30 @@ class GameVC: UIViewController {
             minusRateButton.layer.borderColor = UIColor.red.cgColor
         } else {
             rate -= coin / 10
-            print("rate \(rate)")
             rateLabel.text = "\(rate)"
             minusRateButton.layer.borderColor = UIColor.white.cgColor
             plusRateButton.layer.borderColor = UIColor.white.cgColor
         }
     }
     
+    @IBAction func raitingButton(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "RaitingVC") as! RaitingVC
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }
 
 extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return 36
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         let indexesToRedraw = [indexPath]
-                selectedIndex = indexPath
+        selectedIndex = indexPath
         gameCollection.reloadItems(at: indexesToRedraw)
         
         selectedNumbers.append(indexPath.row)
@@ -289,56 +294,46 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         gameCollection.reloadData()
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = gameCollection.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.white.cgColor
         
-//        if checkBorder == 0 {
-//            if redNumbers.contains(indexPath.row) {
-//                cell.backgroundColor = UIColor.red
-//            } else {
-//                cell.backgroundColor = UIColor.black
-//
-//            }
-//            print("checkBorder = \(checkBorder)")
-//        } else if checkBorder == 1 {
-//
-//        }
         if selectedIndex == indexPath { cell.layer.borderColor = UIColor.blue.cgColor}
-
         
         cell.numberLabel.text = number[indexPath.row]
-        
-//        if selectedIndex == indexPath { cell.layer.borderColor = UIColor.blue.cgColor}
         
         if redNumbers.contains(indexPath.row) {
             cell.backgroundColor = UIColor.red
         } else {
             cell.backgroundColor = UIColor.black
-
         }
-
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: gameCollection.frame.width / 12, height: gameCollection.frame.height / 3)
-
-        }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom:0, right: 0)
-
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-        
     }
 }

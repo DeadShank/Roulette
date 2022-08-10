@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26F477A34D9BAFE24DDC5685 /* Pods_Roulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795A77C78A54A94E0205A0E1 /* Pods_Roulette.framework */; };
 		5090EFDF289BCAB10022E5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFDE289BCAB10022E5DE /* AppDelegate.swift */; };
 		5090EFE1289BCAB10022E5DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */; };
 		5090EFE3289BCAB10022E5DE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE2289BCAB10022E5DE /* LoginVC.swift */; };
@@ -18,9 +19,13 @@
 		5090EFF7289BCFDC0022E5DE /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFF6289BCFDC0022E5DE /* GameVC.swift */; };
 		5090EFF9289BE5DF0022E5DE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFF8289BE5DF0022E5DE /* CollectionViewCell.swift */; };
 		5090EFFB289C3E150022E5DE /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFFA289C3E150022E5DE /* Logic.swift */; };
+		5090EFFF289EAC850022E5DE /* RaitingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFFE289EAC850022E5DE /* RaitingVC.swift */; };
+		5090F001289EB37E0022E5DE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090F000289EB37E0022E5DE /* TableViewCell.swift */; };
+		50F38256289FC39F0009F4CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50F38255289FC39F0009F4CF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3541068202E151A98103E513 /* Pods-Roulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roulette.release.xcconfig"; path = "Target Support Files/Pods-Roulette/Pods-Roulette.release.xcconfig"; sourceTree = "<group>"; };
 		5090EFDB289BCAB10022E5DE /* Roulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5090EFDE289BCAB10022E5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +39,11 @@
 		5090EFF6289BCFDC0022E5DE /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		5090EFF8289BE5DF0022E5DE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		5090EFFA289C3E150022E5DE /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
+		5090EFFE289EAC850022E5DE /* RaitingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingVC.swift; sourceTree = "<group>"; };
+		5090F000289EB37E0022E5DE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		50F38255289FC39F0009F4CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		795A77C78A54A94E0205A0E1 /* Pods_Roulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDF40C35ECD7F46968FC34AC /* Pods-Roulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roulette.debug.xcconfig"; path = "Target Support Files/Pods-Roulette/Pods-Roulette.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +51,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F477A34D9BAFE24DDC5685 /* Pods_Roulette.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502CCAD628A06A4000EBD4D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5090EFE2289BCAB10022E5DE /* LoginVC.swift */,
+				5090EFFE289EAC850022E5DE /* RaitingVC.swift */,
+				5090EFF6289BCFDC0022E5DE /* GameVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		502CCAD728A06A6800EBD4D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5090EFFA289C3E150022E5DE /* Logic.swift */,
+				5090EFF2289BCBF90022E5DE /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5090EFD2289BCAB10022E5DE = {
 			isa = PBXGroup;
 			children = (
 				5090EFDD289BCAB10022E5DE /* Roulette */,
 				5090EFDC289BCAB10022E5DE /* Products */,
+				7D8F5942EF0C6F84F88473EC /* Pods */,
+				8F167440C101C03C68D17320 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,18 +100,35 @@
 			children = (
 				5090EFDE289BCAB10022E5DE /* AppDelegate.swift */,
 				5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */,
-				5090EFE2289BCAB10022E5DE /* LoginVC.swift */,
 				5090EFF4289BCF920022E5DE /* GameStoryboard.storyboard */,
+				5090F000289EB37E0022E5DE /* TableViewCell.swift */,
 				5090EFF8289BE5DF0022E5DE /* CollectionViewCell.swift */,
-				5090EFF6289BCFDC0022E5DE /* GameVC.swift */,
-				5090EFFA289C3E150022E5DE /* Logic.swift */,
+				502CCAD628A06A4000EBD4D1 /* Controller */,
+				502CCAD728A06A6800EBD4D1 /* Model */,
 				5090EFE4289BCAB10022E5DE /* Main.storyboard */,
-				5090EFF2289BCBF90022E5DE /* UserModel.swift */,
-				5090EFE7289BCAB40022E5DE /* Assets.xcassets */,
 				5090EFE9289BCAB40022E5DE /* LaunchScreen.storyboard */,
+				5090EFE7289BCAB40022E5DE /* Assets.xcassets */,
 				5090EFEC289BCAB40022E5DE /* Info.plist */,
+				50F38255289FC39F0009F4CF /* GoogleService-Info.plist */,
 			);
 			path = Roulette;
+			sourceTree = "<group>";
+		};
+		7D8F5942EF0C6F84F88473EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDF40C35ECD7F46968FC34AC /* Pods-Roulette.debug.xcconfig */,
+				3541068202E151A98103E513 /* Pods-Roulette.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F167440C101C03C68D17320 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				795A77C78A54A94E0205A0E1 /* Pods_Roulette.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5090EFEF289BCAB40022E5DE /* Build configuration list for PBXNativeTarget "Roulette" */;
 			buildPhases = (
+				7DCA4005D9076D55E9366893 /* [CP] Check Pods Manifest.lock */,
 				5090EFD7289BCAB10022E5DE /* Sources */,
 				5090EFD8289BCAB10022E5DE /* Frameworks */,
 				5090EFD9289BCAB10022E5DE /* Resources */,
+				B80A4A73A6CABC4B90AF2B9D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +193,7 @@
 			files = (
 				5090EFEB289BCAB40022E5DE /* LaunchScreen.storyboard in Resources */,
 				5090EFE8289BCAB40022E5DE /* Assets.xcassets in Resources */,
+				50F38256289FC39F0009F4CF /* GoogleService-Info.plist in Resources */,
 				5090EFE6289BCAB10022E5DE /* Main.storyboard in Resources */,
 				5090EFF5289BCF920022E5DE /* GameStoryboard.storyboard in Resources */,
 			);
@@ -149,13 +201,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7DCA4005D9076D55E9366893 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Roulette-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B80A4A73A6CABC4B90AF2B9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roulette/Pods-Roulette-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roulette/Pods-Roulette-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roulette/Pods-Roulette-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5090EFD7289BCAB10022E5DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5090EFFF289EAC850022E5DE /* RaitingVC.swift in Sources */,
 				5090EFE3289BCAB10022E5DE /* LoginVC.swift in Sources */,
 				5090EFDF289BCAB10022E5DE /* AppDelegate.swift in Sources */,
+				5090F001289EB37E0022E5DE /* TableViewCell.swift in Sources */,
 				5090EFF9289BE5DF0022E5DE /* CollectionViewCell.swift in Sources */,
 				5090EFFB289C3E150022E5DE /* Logic.swift in Sources */,
 				5090EFF3289BCBF90022E5DE /* UserModel.swift in Sources */,
@@ -304,6 +400,7 @@
 		};
 		5090EFF0289BCAB40022E5DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDF40C35ECD7F46968FC34AC /* Pods-Roulette.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,12 +423,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5090EFF1289BCAB40022E5DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3541068202E151A98103E513 /* Pods-Roulette.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -354,7 +452,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

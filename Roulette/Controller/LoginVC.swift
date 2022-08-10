@@ -6,29 +6,45 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
 class LoginVC: UIViewController {
+    
     @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var passTF: UITextField!
+    
+    var ref: DocumentReference? = nil
+    let db = Firestore.firestore()
+
     
     
     var userData = UserModel()
-
+    
+    func fireBase() {
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-   
+    
     @IBAction func saveButton(_ sender: UIButton) {
         userData.user = nameTF.text ?? ""
         userData.coin = 2000
         userData.score = 0
-        print(userData)
+        userData.password = passTF.text ?? ""
+
+        let docData: [String : Any] = ["user": nameTF.text ?? "",
+                                       "coin": 2000,
+                                       "score": 0,
+                                       "password": passTF.text ?? ""]
+        db.collection("usersData").document().setData(docData)
     }
     
     @IBAction func enterButton(_ sender: UIButton) {
@@ -36,10 +52,8 @@ class LoginVC: UIViewController {
         let vc = myStoryBoard.instantiateViewController(withIdentifier: "GameVC") as! GameVC
         vc.userData = userData
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
-        print("perehod na GameVC")
+        present(vc, animated: true)
     }
-    
 }
 
 

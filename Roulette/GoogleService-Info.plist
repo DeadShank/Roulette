@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>475503636756-ibhr5ftdsolh9f2f5d3hbfcerjfoomr6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.475503636756-ibhr5ftdsolh9f2f5d3hbfcerjfoomr6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDOJWsp23ohh_oeHbf7K6yrczq6xX_smXE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>475503636756</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Reva-Aleksandr.Roulette</string>
+	<key>PROJECT_ID</key>
+	<string>roulette-ba275</string>
+	<key>STORAGE_BUCKET</key>
+	<string>roulette-ba275.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:475503636756:ios:2e2bd0f2f8aa94396d1201</string>
+</dict>
+</plist>

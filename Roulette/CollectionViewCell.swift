@@ -8,11 +8,8 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var numberLabel: UILabel!
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var numberLabel: UILabel!
     
     override func layoutSubviews() {
         propElem()

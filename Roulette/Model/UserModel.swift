@@ -9,6 +9,7 @@ import Foundation
 
 struct UserModel {
     var user = String()
+    var password = String()
     var coin = Int()
     var score = Int()
 }
