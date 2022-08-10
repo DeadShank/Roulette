@@ -4,7 +4,8 @@
 //
 //  Created by Alex on 04.08.2022.
 //
-
+import FirebaseCore
+import FirebaseFirestore
 import UIKit
 
 class GameVC: UIViewController {
@@ -36,6 +37,7 @@ class GameVC: UIViewController {
     var userData = UserModel()
     var gameLogic = Logic()
     
+    let db = Firestore.firestore()
     let redNumbers = [0, 2, 3, 5, 6, 8, 9, 11, 13, 16, 19, 22, 24, 26, 29, 32, 33, 35]
     var selectedIndex = IndexPath(row: -1, section: 0)
     var selectedNumbers: [Int] = []
@@ -132,7 +134,14 @@ class GameVC: UIViewController {
     
     func spinRandomNumber() {
         randomNumber = allNumbers.randomElement()!
-        print("random number = \(randomNumber)")
+        transferData()
+        roundNumberLabel.text = number[randomNumber]
+        selectedNumbers = []
+        gameCollection.layer.borderColor = UIColor.white.cgColor
+        scoreLabel.text = "Score: \(score)"
+    }
+    
+    func transferData() {
         gameLogic.number = number
         gameLogic.randomNumber = randomNumber
         gameLogic.selectedNumbers = selectedNumbers
@@ -142,18 +151,26 @@ class GameVC: UIViewController {
         gameLogic.checkCombo()
         score = gameLogic.score
         coin = gameLogic.coin
-        roundNumberLabel.text = number[randomNumber]
-        selectedNumbers = []
-        gameCollection.layer.borderColor = UIColor.white.cgColor
-        scoreLabel.text = "Score: \(score)"
+    }
+    
+    func saveInBaseData() {
+        let washingtonRef = db.collection("usersData").document(userData.documentId)
+        washingtonRef.updateData([
+            "coin": userData.coin,
+            "score": userData.score
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
     }
     
     func logicData() {
         if rate > coin {
             rateLabel.layer.borderColor = UIColor.red.cgColor
-            print("rate > coin")
         } else if selectedNumbers.count == 0 {
-            print("selectNumbers = 0")
         } else {
             rateLabel.layer.borderColor = UIColor.white.cgColor
             coin -= rate
@@ -164,6 +181,7 @@ class GameVC: UIViewController {
             if coin < 100 {
                 coin += 100
                 coinLabel.text = "Coins: \(coin)"
+                saveInBaseData()
             }
         }
     }
@@ -286,11 +304,8 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
                         didSelectItemAt indexPath: IndexPath) {
         let indexesToRedraw = [indexPath]
         selectedIndex = indexPath
-        gameCollection.reloadItems(at: indexesToRedraw)
-        
+        gameCollection.reloadItems(at: indexesToRedraw)        
         selectedNumbers.append(indexPath.row)
-        print("save numbers \(selectedNumbers)")
-        print("data \(indexPath.row)")
         gameCollection.reloadData()
     }
     

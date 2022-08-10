@@ -12,4 +12,5 @@ struct UserModel {
     var password = String()
     var coin = Int()
     var score = Int()
+    var documentId = String()
 }
