@@ -41,7 +41,7 @@ class GameVC: UIViewController {
     let redNumbers = [0, 2, 3, 5, 6, 8, 9, 11, 13, 16, 19, 22, 24, 26, 29, 32, 33, 35]
     var selectedIndex = IndexPath(row: -1, section: 0)
     var selectedNumbers: [Int] = []
-    var number = ["3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36", "2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35", "1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34"]
+    var number = ["3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36", "2", "5", "8", "11", "14", "17", "20", "23", "26", "29", "32", "35", "1", "4", "7", "10", "13", "16", "19", "22", "25", "28", "31", "34", "0"]
     let allNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
     var randomNumber: Int = 0
     var score: Int = 0
@@ -52,7 +52,6 @@ class GameVC: UIViewController {
         super.viewDidLoad()
         createGameCollection()
         propElems()
-        print(userData)
     }
     
     func propElems() {
@@ -149,7 +148,6 @@ class GameVC: UIViewController {
         selectedNumbers = []
         gameCollection.layer.borderColor = UIColor.white.cgColor
         scoreLabel.text = "Score: \(score)"
-        print("\(coin) coins")
     }
     
     func saveInBaseData() {
@@ -168,8 +166,6 @@ class GameVC: UIViewController {
     func saveUserRef() {
         userDef.saveScore(int: score)
         userDef.saveCoins(int: coin)
-        print("userDef coin  = \(userDef.getCoins())")
-        print("userDef score  = \(userDef.getScore())")
     }
     
     func logicData() {

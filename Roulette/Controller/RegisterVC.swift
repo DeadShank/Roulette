@@ -49,7 +49,6 @@ class RegisterVC: UIViewController {
         userData.coin = 2000
         userData.score = 0
         userData.password = passTF.text ?? ""
-        
 
         let docData: [String : Any] = ["user": nameTF.text ?? "",
                                        "coin": 2000,

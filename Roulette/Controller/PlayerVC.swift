@@ -44,7 +44,6 @@ class PlayerVC: UIViewController {
         userData.documentId = userDef.getDocID()
         userData.score = userDef.getScore()
         userData.coin = userDef.getCoins()
-        print(userData)
     }
     
     @IBAction func playButton(_ sender: UIButton) {
@@ -74,7 +73,6 @@ class PlayerVC: UIViewController {
             self.userLabel.text = "Name: \(self.userData.user)"
             self.coinsLabel.text = "Coins: \(self.userData.coin)"
             self.scoreLabel.text = "Score: \(self.userData.score)"
-            print(user)
             self.userDef.saveCoins(int: user.coin)
             self.userDef.saveName(name: user.user)
             self.userDef.saveScore(int: user.score)
