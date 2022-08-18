@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		26F477A34D9BAFE24DDC5685 /* Pods_Roulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795A77C78A54A94E0205A0E1 /* Pods_Roulette.framework */; };
+		507CEC6D28A52179005C77B6 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CEC6C28A52179005C77B6 /* PlayerVC.swift */; };
+		507CEC9128AE80B8005C77B6 /* MyUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CEC9028AE80B8005C77B6 /* MyUserData.swift */; };
 		5090EFDF289BCAB10022E5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFDE289BCAB10022E5DE /* AppDelegate.swift */; };
 		5090EFE1289BCAB10022E5DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */; };
-		5090EFE3289BCAB10022E5DE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE2289BCAB10022E5DE /* LoginVC.swift */; };
+		5090EFE3289BCAB10022E5DE /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE2289BCAB10022E5DE /* RegisterVC.swift */; };
 		5090EFE6289BCAB10022E5DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090EFE4289BCAB10022E5DE /* Main.storyboard */; };
 		5090EFE8289BCAB40022E5DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5090EFE7289BCAB40022E5DE /* Assets.xcassets */; };
 		5090EFEB289BCAB40022E5DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5090EFE9289BCAB40022E5DE /* LaunchScreen.storyboard */; };
@@ -26,10 +28,12 @@
 
 /* Begin PBXFileReference section */
 		3541068202E151A98103E513 /* Pods-Roulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roulette.release.xcconfig"; path = "Target Support Files/Pods-Roulette/Pods-Roulette.release.xcconfig"; sourceTree = "<group>"; };
+		507CEC6C28A52179005C77B6 /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
+		507CEC9028AE80B8005C77B6 /* MyUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserData.swift; sourceTree = "<group>"; };
 		5090EFDB289BCAB10022E5DE /* Roulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5090EFDE289BCAB10022E5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5090EFE2289BCAB10022E5DE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5090EFE2289BCAB10022E5DE /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		5090EFE5289BCAB10022E5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5090EFE7289BCAB40022E5DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5090EFEA289BCAB40022E5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +65,8 @@
 		502CCAD628A06A4000EBD4D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5090EFE2289BCAB10022E5DE /* LoginVC.swift */,
+				507CEC6C28A52179005C77B6 /* PlayerVC.swift */,
+				5090EFE2289BCAB10022E5DE /* RegisterVC.swift */,
 				5090EFFE289EAC850022E5DE /* RaitingVC.swift */,
 				5090EFF6289BCFDC0022E5DE /* GameVC.swift */,
 			);
@@ -73,6 +78,7 @@
 			children = (
 				5090EFFA289C3E150022E5DE /* Logic.swift */,
 				5090EFF2289BCBF90022E5DE /* UserModel.swift */,
+				507CEC9028AE80B8005C77B6 /* MyUserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,7 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5090EFFF289EAC850022E5DE /* RaitingVC.swift in Sources */,
-				5090EFE3289BCAB10022E5DE /* LoginVC.swift in Sources */,
+				5090EFE3289BCAB10022E5DE /* RegisterVC.swift in Sources */,
 				5090EFDF289BCAB10022E5DE /* AppDelegate.swift in Sources */,
 				5090F001289EB37E0022E5DE /* TableViewCell.swift in Sources */,
 				5090EFF9289BE5DF0022E5DE /* CollectionViewCell.swift in Sources */,
@@ -257,6 +263,8 @@
 				5090EFF3289BCBF90022E5DE /* UserModel.swift in Sources */,
 				5090EFF7289BCFDC0022E5DE /* GameVC.swift in Sources */,
 				5090EFE1289BCAB10022E5DE /* SceneDelegate.swift in Sources */,
+				507CEC9128AE80B8005C77B6 /* MyUserData.swift in Sources */,
+				507CEC6D28A52179005C77B6 /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

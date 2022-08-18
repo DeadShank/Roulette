@@ -12,7 +12,6 @@ import FirebaseFirestore
 class RaitingVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var backGameButton: UIButton!
     
     var usersData: [UserModel] = []
     var sortedData : [UserModel] = []
@@ -21,7 +20,6 @@ class RaitingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         createTable()
         getData()
     }
@@ -55,9 +53,6 @@ class RaitingVC: UIViewController {
         tableView.delegate = self
     }
 
-    @IBAction func backGameButton(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
 }
 
 extension RaitingVC: UITableViewDataSource, UITableViewDelegate {

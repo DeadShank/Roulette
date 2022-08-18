@@ -32,10 +32,10 @@ class GameVC: UIViewController {
     @IBOutlet weak var minusRateButton: UIButton!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var plusRateButton: UIButton!
-    @IBOutlet weak var seetingsButton: UIButton!
     
     var userData = UserModel()
     var gameLogic = Logic()
+    var userDef = MyUserData()
     
     let db = Firestore.firestore()
     let redNumbers = [0, 2, 3, 5, 6, 8, 9, 11, 13, 16, 19, 22, 24, 26, 29, 32, 33, 35]
@@ -52,6 +52,7 @@ class GameVC: UIViewController {
         super.viewDidLoad()
         createGameCollection()
         propElems()
+        print(userData)
     }
     
     func propElems() {
@@ -134,14 +135,6 @@ class GameVC: UIViewController {
     
     func spinRandomNumber() {
         randomNumber = allNumbers.randomElement()!
-        transferData()
-        roundNumberLabel.text = number[randomNumber]
-        selectedNumbers = []
-        gameCollection.layer.borderColor = UIColor.white.cgColor
-        scoreLabel.text = "Score: \(score)"
-    }
-    
-    func transferData() {
         gameLogic.number = number
         gameLogic.randomNumber = randomNumber
         gameLogic.selectedNumbers = selectedNumbers
@@ -151,13 +144,19 @@ class GameVC: UIViewController {
         gameLogic.checkCombo()
         score = gameLogic.score
         coin = gameLogic.coin
+        coinLabel.text = "Coins: \(coin)"
+        roundNumberLabel.text = number[randomNumber]
+        selectedNumbers = []
+        gameCollection.layer.borderColor = UIColor.white.cgColor
+        scoreLabel.text = "Score: \(score)"
+        print("\(coin) coins")
     }
     
     func saveInBaseData() {
         let washingtonRef = db.collection("usersData").document(userData.documentId)
         washingtonRef.updateData([
-            "coin": userData.coin,
-            "score": userData.score
+            "coin": coin,
+            "score": score
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
@@ -165,6 +164,12 @@ class GameVC: UIViewController {
                 print("Document successfully updated")
             }
         }
+    }
+    func saveUserRef() {
+        userDef.saveScore(int: score)
+        userDef.saveCoins(int: coin)
+        print("userDef coin  = \(userDef.getCoins())")
+        print("userDef score  = \(userDef.getScore())")
     }
     
     func logicData() {
@@ -181,9 +186,10 @@ class GameVC: UIViewController {
             if coin < 100 {
                 coin += 100
                 coinLabel.text = "Coins: \(coin)"
-                saveInBaseData()
             }
         }
+        saveInBaseData()
+        saveUserRef()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -286,10 +292,8 @@ class GameVC: UIViewController {
         }
     }
     
-    @IBAction func raitingButton(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "RaitingVC") as! RaitingVC
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true)
     }
 }
 
