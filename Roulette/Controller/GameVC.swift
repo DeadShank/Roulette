@@ -32,6 +32,7 @@ class GameVC: UIViewController {
     @IBOutlet weak var minusRateButton: UIButton!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var plusRateButton: UIButton!
+    @IBOutlet weak var winningLabel: UILabel!
     
     var userData = UserModel()
     var gameLogic = Logic()
@@ -47,6 +48,7 @@ class GameVC: UIViewController {
     var score: Int = 0
     var rate: Int = 0
     var coin: Int = 0
+    var winningScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,9 +118,12 @@ class GameVC: UIViewController {
         scoreLabel.layer.borderColor = UIColor.white.cgColor
         scoreLabel.layer.borderWidth = 1
         
+        winningLabel.text = "Winning: "
+        
         score = userData.score
         coin = userData.coin
         rate = coin / 10
+        winningScore = userData.score
         
         scoreLabel.text = "Score: \(score)"
         rateLabel.text = "\(rate)"
@@ -132,6 +137,22 @@ class GameVC: UIViewController {
         coinLabel.text = "Coins: \(coin)"
     }
     
+    func clearButtons() {
+        zeroButton.backgroundColor = .clear
+        one2k1Button.backgroundColor = .clear
+        two2k1Button.backgroundColor = .clear
+        three2k1Button.backgroundColor = .clear
+        oneTwelveButton.backgroundColor = .clear
+        twoTwelveButton.backgroundColor = .clear
+        threeTwelveButton.backgroundColor = .clear
+        oneEighteenButton.backgroundColor = .clear
+        evenButton.backgroundColor = .clear
+        redButton.backgroundColor = .clear
+        blackButton.backgroundColor = .clear
+        oddButton.backgroundColor = .clear
+        ninteteenThirtySixButton.backgroundColor = .clear
+    }
+    
     func spinRandomNumber() {
         randomNumber = allNumbers.randomElement()!
         gameLogic.number = number
@@ -141,12 +162,13 @@ class GameVC: UIViewController {
         gameLogic.score = score
         gameLogic.coin = coin
         gameLogic.checkCombo()
+        winningScore = score
         score = gameLogic.score
         coin = gameLogic.coin
+        winningLabel.text = "Winning: \(score - winningScore) score"
         coinLabel.text = "Coins: \(coin)"
         roundNumberLabel.text = number[randomNumber]
         selectedNumbers = []
-        gameCollection.layer.borderColor = UIColor.white.cgColor
         scoreLabel.text = "Score: \(score)"
     }
     
@@ -163,6 +185,7 @@ class GameVC: UIViewController {
             }
         }
     }
+    
     func saveUserRef() {
         userDef.saveScore(int: score)
         userDef.saveCoins(int: coin)
@@ -186,6 +209,9 @@ class GameVC: UIViewController {
         }
         saveInBaseData()
         saveUserRef()
+        clearButtons()
+        selectedIndex = IndexPath(row: -1, section: 0)
+        gameCollection.reloadData()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -204,66 +230,79 @@ class GameVC: UIViewController {
     @IBAction func zeroButton(_ sender: UIButton) {
         selectedNumbers.append(36)
         print("selectedNumbers \(selectedNumbers)")
+        zeroButton.backgroundColor = .blue
     }
     
     @IBAction func one2k1Button(_ sender: UIButton) {
         selectedNumbers += [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
         print("selectedNumbers \(selectedNumbers)")
+        one2k1Button.backgroundColor = .blue
     }
     
     @IBAction func two2k1Button(_ sender: UIButton) {
         selectedNumbers += [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
         print("selectedNumbers \(selectedNumbers)")
+        two2k1Button.backgroundColor = .blue
     }
     
     @IBAction func three2k1Button(_ sender: UIButton) {
         selectedNumbers += [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
         print("selectedNumbers \(selectedNumbers)")
+        three2k1Button.backgroundColor = .blue
     }
     
     @IBAction func oneTwelveButton(_ sender: UIButton) {
         selectedNumbers += [0, 1, 2, 3, 12, 13, 14, 15, 24, 25, 26, 27]
         print("selectedNumbers \(selectedNumbers)")
+        oneTwelveButton.backgroundColor = .blue
     }
     
     @IBAction func twoTwelveButton(_ sender: UIButton) {
         selectedNumbers += [4, 5, 6, 7, 8, 16, 17, 18, 19, 28, 29, 30, 31]
         print("selectedNumbers \(selectedNumbers)")
+        twoTwelveButton.backgroundColor = .blue
     }
     
     @IBAction func threeTwelveButton(_ sender: UIButton) {
         selectedNumbers += [8, 9, 10, 11, 20, 21, 22, 23, 32, 33, 34, 35]
         print("selectedNumbers \(selectedNumbers)")
+        threeTwelveButton.backgroundColor = .blue
     }
     
     @IBAction func oneEighteenButton(_ sender: UIButton) {
         selectedNumbers += [0, 1, 2, 3, 4, 5, 12, 13, 14, 15, 16, 17, 24, 25, 26, 27, 28, 29]
         print("selectedNumbers \(selectedNumbers)")
+        oneEighteenButton.backgroundColor = .blue
     }
     
     @IBAction func evenButton(_ sender: UIButton) {
         selectedNumbers += [1, 3, 5, 7, 9, 11, 12, 14, 16, 18, 20, 22, 25, 27, 29, 31, 33, 35]
         print("selectedNumbers \(selectedNumbers)")
+        evenButton.backgroundColor = .blue
     }
     
     @IBAction func redButton(_ sender: UIButton) {
         selectedNumbers += [0, 2, 3, 5, 6, 8, 9, 11, 13, 16, 19, 22, 24, 26, 29, 32, 33, 35]
         print("selectedNumbers \(selectedNumbers)")
+        redButton.backgroundColor = .blue
     }
     
     @IBAction func blackButton(_ sender: UIButton) {
         selectedNumbers += [1, 4, 7, 10, 12, 14, 15, 17, 18, 20, 21, 23, 25, 27, 28, 30, 31, 34]
         print("selectedNumbers \(selectedNumbers)")
+        blackButton.backgroundColor = .blue
     }
     
     @IBAction func oddButton(_ sender: UIButton) {
         selectedNumbers += [0, 2, 4, 6, 8, 10, 13, 15, 17, 19, 21, 23, 24, 26, 28, 30, 32, 34]
         print("selectedNumbers \(selectedNumbers)")
+        oddButton.backgroundColor = .blue
     }
     
     @IBAction func ninteteenThirtySixButton(_ sender: UIButton) {
         selectedNumbers += [6, 7, 8, 9, 10, 11, 18, 19, 20, 21, 22, 23, 30, 31, 32, 33, 34, 35]
         print("selectedNumbers \(selectedNumbers)")
+        ninteteenThirtySixButton.backgroundColor = .blue
     }
     
     @IBAction func plusRateButton(_ sender: UIButton) {
@@ -306,7 +345,6 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         selectedIndex = indexPath
         gameCollection.reloadItems(at: indexesToRedraw)        
         selectedNumbers.append(indexPath.row)
-        gameCollection.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -316,8 +354,6 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.white.cgColor
         
-        if selectedIndex == indexPath { cell.layer.borderColor = UIColor.blue.cgColor}
-        
         cell.numberLabel.text = number[indexPath.row]
         
         if redNumbers.contains(indexPath.row) {
@@ -325,7 +361,10 @@ extension GameVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         } else {
             cell.backgroundColor = UIColor.black
         }
+        if selectedIndex == indexPath { cell.backgroundColor = UIColor.blue}
+        
         return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView,

@@ -4,7 +4,6 @@
 //
 //  Created by Alex on 07.08.2022.
 //
-
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
@@ -64,9 +63,9 @@ extension RaitingVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        cell.scoreLabel.text = String(usersData[indexPath.row].score)
-        cell.coinLabel.text = String(usersData[indexPath.row].coin)
-        cell.nameLabel.text = usersData[indexPath.row].user
+        cell.scoreLabel.text = "Score: \(usersData[indexPath.row].score)"
+        cell.coinLabel.text = "Coins: \(usersData[indexPath.row].coin)"
+        cell.nameLabel.text = "User: \(usersData[indexPath.row].user)"
         return cell
     }
     

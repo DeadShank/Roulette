@@ -10,21 +10,26 @@ import FirebaseCore
 import FirebaseFirestore
 
 class RegisterVC: UIViewController {
-    
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     
     var ref: DocumentReference? = nil
     let db = Firestore.firestore()
     var userData = UserModel()
     
-    func fireBase() {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        propElem()
+    }
+    
+    func propElem() {
+        backButton.clipsToBounds = true
+        backButton.layer.cornerRadius = 10
         
+        saveButton.clipsToBounds = true
+        saveButton.layer.cornerRadius = 10
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -55,7 +60,6 @@ class RegisterVC: UIViewController {
                                        "score": 0,
                                        "password": passTF.text ?? "",
                                        "documentId": ""]
-
         let document = db.collection("usersData").document()
         document.setData(docData)
         userData.documentId = document.documentID

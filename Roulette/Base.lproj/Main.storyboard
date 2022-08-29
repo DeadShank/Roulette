@@ -77,13 +77,73 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="imt-Aa-JyL" id="G6v-Xf-Zt8"/>
                         <outlet property="nameTF" destination="hkQ-Kc-caS" id="nbb-Tf-fu2"/>
                         <outlet property="passTF" destination="kua-Bd-EZ1" id="f4V-Dh-A9R"/>
+                        <outlet property="saveButton" destination="dEM-fm-LTb" id="TEa-3y-gEU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2345" y="-222"/>
+        </scene>
+        <!--Account settings-->
+        <scene sceneID="4bD-ej-e11">
+            <objects>
+                <viewController storyboardIdentifier="AccountVC" id="Nir-dp-Gfl" customClass="AccountVC" customModule="Roulette" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kRX-pU-Pq8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDj-vf-igC">
+                                <rect key="frame" x="142" y="408.5" width="130" height="40"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="q6I-Gj-TK2"/>
+                                    <constraint firstAttribute="width" constant="130" id="s2u-bU-N6p"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="Nir-dp-Gfl" eventType="touchUpInside" id="U4V-GI-U4g"/>
+                                    <action selector="registerButton:" destination="Bik-ZR-eSe" eventType="touchUpInside" id="8Jt-Ui-hVt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTu-YG-vJk">
+                                <rect key="frame" x="142" y="478.5" width="130" height="40"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="umj-wL-qyT"/>
+                                    <constraint firstAttribute="height" constant="40" id="wWX-x4-66L"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete account"/>
+                                <connections>
+                                    <action selector="deleteButton:" destination="Nir-dp-Gfl" eventType="touchUpInside" id="RM5-oa-JEc"/>
+                                    <action selector="registerButton:" destination="Bik-ZR-eSe" eventType="touchUpInside" id="MWo-7W-YNF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sOh-YD-rBW"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MTu-YG-vJk" firstAttribute="centerX" secondItem="sOh-YD-rBW" secondAttribute="centerX" id="AlP-ED-cAd"/>
+                            <constraint firstItem="MTu-YG-vJk" firstAttribute="top" secondItem="kDj-vf-igC" secondAttribute="bottom" constant="30" id="FEF-UY-4iM"/>
+                            <constraint firstItem="kDj-vf-igC" firstAttribute="centerX" secondItem="sOh-YD-rBW" secondAttribute="centerX" id="XRq-KF-28Y"/>
+                            <constraint firstItem="kDj-vf-igC" firstAttribute="centerY" secondItem="sOh-YD-rBW" secondAttribute="centerY" id="uL8-eT-dul"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account settings" selectedImage="person.fill" catalog="system" id="L6R-oM-PqC"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="MTu-YG-vJk" id="eKV-Ak-3U1"/>
+                        <outlet property="logoutButton" destination="kDj-vf-igC" id="MBM-ac-iBU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uzG-9V-nsB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671" y="1099"/>
         </scene>
         <!--Top Players-->
         <scene sceneID="J2C-6w-2jR">
@@ -109,9 +169,9 @@
                                                     <rect key="frame" x="10" y="10" width="394" height="70"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7K-jL-Rpo">
-                                                            <rect key="frame" x="30" y="10" width="70" height="20"/>
+                                                            <rect key="frame" x="30" y="10" width="150" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="70" id="n3y-rC-SZr"/>
+                                                                <constraint firstAttribute="width" constant="150" id="n3y-rC-SZr"/>
                                                                 <constraint firstAttribute="height" constant="20" id="v7I-ju-ebZ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -119,9 +179,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-0p-LdZ">
-                                                            <rect key="frame" x="30" y="40" width="70" height="20"/>
+                                                            <rect key="frame" x="30" y="40" width="150" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="70" id="NYl-VU-BCA"/>
+                                                                <constraint firstAttribute="width" constant="150" id="NYl-VU-BCA"/>
                                                                 <constraint firstAttribute="height" constant="20" id="tzG-rJ-vYi"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -308,7 +368,10 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="coinsLabel" destination="MHt-s8-dcS" id="Pet-zr-gFh"/>
+                        <outlet property="loginButton" destination="uo4-WI-Llz" id="636-a9-mAg"/>
                         <outlet property="passTF" destination="Uj2-KA-ATa" id="2ZA-bk-7MR"/>
+                        <outlet property="playButton" destination="E29-P7-hzC" id="9q8-eU-lbg"/>
+                        <outlet property="registerButton" destination="YPQ-C6-3f8" id="cSj-Oj-2ZN"/>
                         <outlet property="scoreLabel" destination="mQP-Yo-wDl" id="yIj-JV-nZV"/>
                         <outlet property="userLabel" destination="Bem-1i-muX" id="Iwe-xx-GPj"/>
                         <outlet property="userTF" destination="jyH-LG-ZPd" id="AKE-qQ-Meg"/>
@@ -321,7 +384,7 @@
         <!--Main Tab BarVC-->
         <scene sceneID="oEC-r1-CP9">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarVC" id="b58-u5-Ffu" customClass="MainTabBarVC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarVC" id="b58-u5-Ffu" customClass="MainTabBarVC" customModule="Roulette" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WgK-vE-cie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -330,6 +393,7 @@
                     <connections>
                         <segue destination="Bik-ZR-eSe" kind="relationship" relationship="viewControllers" id="MRN-Ki-Mm3"/>
                         <segue destination="aFd-hQ-di9" kind="relationship" relationship="viewControllers" id="tDl-zq-Vff"/>
+                        <segue destination="Nir-dp-Gfl" kind="relationship" relationship="viewControllers" id="lgb-VU-27R"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19d-Bw-cWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,6 +403,7 @@
     </scenes>
     <resources>
         <image name="gamecontroller.fill" catalog="system" width="128" height="80"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

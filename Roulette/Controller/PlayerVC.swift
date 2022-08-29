@@ -15,6 +15,9 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var userTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     var ref: DocumentReference? = nil
     let db = Firestore.firestore()
@@ -23,22 +26,49 @@ class PlayerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        visionElems()
         propElems()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        visionElems()
         propElems()
     }
+    
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
     
+    func visionElems() {
+        if coinsLabel.text == "0" {
+            playButton.alpha = 0
+            loginButton.alpha = 1
+            registerButton.alpha = 1
+            userTF.alpha = 1
+            passTF.alpha = 1
+        } else {
+            playButton.alpha = 1
+            loginButton.alpha = 0
+            registerButton.alpha = 0
+            userTF.alpha = 0
+            passTF.alpha = 0
+        }
+    }
+    
     func propElems() {
-        userLabel.text = userDef.getName()
-        coinsLabel.text = String(userDef.getCoins())
-        scoreLabel.text = String(userDef.getScore())
+        playButton.clipsToBounds = true
+        playButton.layer.cornerRadius = 10
+        
+        registerButton.clipsToBounds = true
+        registerButton.layer.cornerRadius = 10
+        
+        loginButton.clipsToBounds = true
+        loginButton.layer.cornerRadius = 10
+        
+        userLabel.text = "User: \(userDef.getName())"
+        coinsLabel.text = "Coins: \(userDef.getCoins())"
+        scoreLabel.text = "Score: \(userDef.getScore())"
         
         userData.user = userDef.getName()
         userData.documentId = userDef.getDocID()
@@ -77,7 +107,6 @@ class PlayerVC: UIViewController {
             self.userDef.saveName(name: user.user)
             self.userDef.saveScore(int: user.score)
             self.userDef.saveDocumentId(docID: user.documentId)
-            
         }
     }
     
@@ -89,5 +118,6 @@ class PlayerVC: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         getData()
+        visionElems()
     }
 }

@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		26F477A34D9BAFE24DDC5685 /* Pods_Roulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795A77C78A54A94E0205A0E1 /* Pods_Roulette.framework */; };
+		507B75C428B8FBF2004E80D7 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B75C328B8FBF2004E80D7 /* AccountVC.swift */; };
 		507CEC6D28A52179005C77B6 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CEC6C28A52179005C77B6 /* PlayerVC.swift */; };
 		507CEC9128AE80B8005C77B6 /* MyUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CEC9028AE80B8005C77B6 /* MyUserData.swift */; };
+		507CEC9328AF8117005C77B6 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CEC9228AF8117005C77B6 /* MainTabBarVC.swift */; };
 		5090EFDF289BCAB10022E5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFDE289BCAB10022E5DE /* AppDelegate.swift */; };
 		5090EFE1289BCAB10022E5DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */; };
 		5090EFE3289BCAB10022E5DE /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5090EFE2289BCAB10022E5DE /* RegisterVC.swift */; };
@@ -28,8 +30,10 @@
 
 /* Begin PBXFileReference section */
 		3541068202E151A98103E513 /* Pods-Roulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roulette.release.xcconfig"; path = "Target Support Files/Pods-Roulette/Pods-Roulette.release.xcconfig"; sourceTree = "<group>"; };
+		507B75C328B8FBF2004E80D7 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		507CEC6C28A52179005C77B6 /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		507CEC9028AE80B8005C77B6 /* MyUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserData.swift; sourceTree = "<group>"; };
+		507CEC9228AF8117005C77B6 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		5090EFDB289BCAB10022E5DE /* Roulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5090EFDE289BCAB10022E5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5090EFE0289BCAB10022E5DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,10 +69,12 @@
 		502CCAD628A06A4000EBD4D1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				507CEC9228AF8117005C77B6 /* MainTabBarVC.swift */,
 				507CEC6C28A52179005C77B6 /* PlayerVC.swift */,
 				5090EFE2289BCAB10022E5DE /* RegisterVC.swift */,
 				5090EFFE289EAC850022E5DE /* RaitingVC.swift */,
 				5090EFF6289BCFDC0022E5DE /* GameVC.swift */,
+				507B75C328B8FBF2004E80D7 /* AccountVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				5090EFF9289BE5DF0022E5DE /* CollectionViewCell.swift in Sources */,
 				5090EFFB289C3E150022E5DE /* Logic.swift in Sources */,
 				5090EFF3289BCBF90022E5DE /* UserModel.swift in Sources */,
+				507B75C428B8FBF2004E80D7 /* AccountVC.swift in Sources */,
+				507CEC9328AF8117005C77B6 /* MainTabBarVC.swift in Sources */,
 				5090EFF7289BCFDC0022E5DE /* GameVC.swift in Sources */,
 				5090EFE1289BCAB10022E5DE /* SceneDelegate.swift in Sources */,
 				507CEC9128AE80B8005C77B6 /* MyUserData.swift in Sources */,

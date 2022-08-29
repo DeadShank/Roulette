@@ -379,6 +379,17 @@
                                     <action selector="backButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="q7H-i8-BPC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUd-vu-Glx">
+                                <rect key="frame" x="373" y="330" width="150" height="30"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3h7-wS-uuy"/>
+                                    <constraint firstAttribute="width" constant="150" id="5Vr-CT-puW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -402,6 +413,7 @@
                             <constraint firstItem="X9g-2l-0kr" firstAttribute="leading" secondItem="Ql3-xg-jFs" secondAttribute="trailing" constant="90" id="P8p-1m-6vA"/>
                             <constraint firstItem="X9g-2l-0kr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="PWq-kT-gqg"/>
                             <constraint firstItem="jkK-bq-Thh" firstAttribute="leading" secondItem="GxT-Mr-1ub" secondAttribute="trailing" id="QEH-Gf-VUY"/>
+                            <constraint firstItem="hUd-vu-Glx" firstAttribute="top" secondItem="j65-bQ-BM5" secondAttribute="bottom" constant="40" id="Qxa-C1-gN1"/>
                             <constraint firstItem="BK2-ws-LsZ" firstAttribute="top" secondItem="2un-z8-Prv" secondAttribute="bottom" constant="48" id="Ta6-HU-19a"/>
                             <constraint firstItem="K6L-U1-Jhh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="UGn-3X-NXI"/>
                             <constraint firstItem="K6L-U1-Jhh" firstAttribute="top" secondItem="2un-z8-Prv" secondAttribute="bottom" constant="10" id="UlE-Gl-3Lk"/>
@@ -422,6 +434,7 @@
                             <constraint firstItem="j65-bQ-BM5" firstAttribute="leading" secondItem="UYW-zn-mDW" secondAttribute="trailing" id="fth-Ea-Ucy"/>
                             <constraint firstItem="eLu-FJ-VZf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="gDD-cj-ZYW"/>
                             <constraint firstItem="D2p-3V-sV0" firstAttribute="top" secondItem="bH9-Td-Vvl" secondAttribute="bottom" id="jqj-NL-8G8"/>
+                            <constraint firstItem="hUd-vu-Glx" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="kqE-Dl-4Oo"/>
                             <constraint firstItem="2un-z8-Prv" firstAttribute="top" secondItem="eLu-FJ-VZf" secondAttribute="bottom" constant="10" id="n4H-5q-cbl"/>
                             <constraint firstAttribute="trailing" secondItem="YeU-ee-JiR" secondAttribute="trailing" constant="16" id="nRR-O8-ERf"/>
                             <constraint firstItem="D2p-3V-sV0" firstAttribute="leading" secondItem="j65-bQ-BM5" secondAttribute="trailing" id="nyI-za-8t0"/>
@@ -458,6 +471,7 @@
                         <outlet property="threeTwelveButton" destination="bH9-Td-Vvl" id="ny5-Ek-oVf"/>
                         <outlet property="two2k1Button" destination="eh6-6E-DYo" id="1MN-Wi-nyE"/>
                         <outlet property="twoTwelveButton" destination="jkK-bq-Thh" id="UWo-Ag-uZg"/>
+                        <outlet property="winningLabel" destination="hUd-vu-Glx" id="Yq9-4X-Mwj"/>
                         <outlet property="zeroButton" destination="X9g-2l-0kr" id="fIN-g5-eKf"/>
                     </connections>
                 </viewController>
