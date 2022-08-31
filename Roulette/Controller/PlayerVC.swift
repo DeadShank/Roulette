@@ -26,34 +26,39 @@ class PlayerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        visionElems()
         propElems()
+        visionElems()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        visionElems()
         propElems()
+        visionElems()
     }
-    
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
     
     func visionElems() {
-        if coinsLabel.text == "0" {
+        if userData.user == "" {
             playButton.alpha = 0
             loginButton.alpha = 1
             registerButton.alpha = 1
             userTF.alpha = 1
             passTF.alpha = 1
         } else {
-            playButton.alpha = 1
-            loginButton.alpha = 0
-            registerButton.alpha = 0
-            userTF.alpha = 0
-            passTF.alpha = 0
+            visionPlay()
         }
+    }
+    
+    func visionPlay() {
+        playButton.alpha = 1
+        loginButton.alpha = 0
+        registerButton.alpha = 0
+        userTF.alpha = 0
+        userTF.text = ""
+        passTF.alpha = 0
+        passTF.text = ""
     }
     
     func propElems() {
@@ -107,6 +112,7 @@ class PlayerVC: UIViewController {
             self.userDef.saveName(name: user.user)
             self.userDef.saveScore(int: user.score)
             self.userDef.saveDocumentId(docID: user.documentId)
+            self.visionPlay()
         }
     }
     
@@ -118,6 +124,5 @@ class PlayerVC: UIViewController {
     
     @IBAction func loginButton(_ sender: UIButton) {
         getData()
-        visionElems()
     }
 }
